@@ -10,7 +10,7 @@
 		<!-- Logo, nom de l'entreprise et une partie pour se connecter -->
 			
 			<figure>
-				<img src="../Img/logo_ET.png" alt="Logo de l'entreprise" />
+				<img src="../Img/logo.png" alt="Logo de l'entreprise" />
 			</figure>
 			
 			<div id="menu">
@@ -30,7 +30,7 @@
 			</div>
 		</header>
 		
-		<form method="post" action="index.php" enctype="multipart/form-data">
+		<form method="post" action="../Controller/ControleFichier.php" enctype="multipart/form-data">
 			<label for="nom">Nom :<input type="text" name="nom"> </label>
 			<label for="prenom">Prenom :<input type="text" name="prenom"> </label>
 			<label for="dateNaissance">Date de naissance :<input type="date" name="nom"> </label>
@@ -249,12 +249,13 @@
 			<label for="numAd">Numéro :<input type="number" name="numAd"> </label>
 			<label for="pseudo">Pseudo :<input type="text" name="pseudo"> </label>
 			<label for="passwd">Mot de Passe :<input type="password" name="passwd"> </label>
-			<label for="IDCard">Photocopie recto verso de votre carte d'identité au format PDF:</label>
+			<label for="IDCard">Photocopie recto verso de votre carte d'identité au format PDF/ JPG/ JPEG/ PNG :</label>
 			<input type="file" name="IDCard" id="IDCard" />
-			<label for="RIB">Votre rib au format PDF :</label>
+			<label for="RIB">Votre rib au format PDF/ JPG/ JPEG/ PNG :</label>
 			<input type="file" name="RIB" id="RIB" />
-			<label for="CV">Votre CV au format PDF :</label>
+			<label for="CV">Votre CV au format PDF/ JPG/ JPEG/ PNG :</label>
 			<input type="file" name="CV" id="CV" />
+			<input type="submit" value="Valider" >
 		</form>
 	</body>
 	

@@ -10,7 +10,7 @@
 		<!-- Logo, nom de l'entreprise et une partie pour se connecter -->
 			
 			<figure>
-				<img src="../Img/logo_ET.png" alt="Logo de l'entreprise" />
+				<img src="../Img/logo.png" alt="Logo de l'entreprise" />
 			</figure>
 			
 			<div id="menu">
@@ -26,7 +26,7 @@
 			</div>
 			
 			<div id="inscription">
-				<a href="inscription.php" class="btn btn-info">M'inscrire</a>
+				<a href="../View/inscription.php" class="btn btn-info">M'inscrire</a>
 			</div>
 		</header>
 	</body>
