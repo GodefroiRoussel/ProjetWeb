@@ -19,11 +19,15 @@
 			
 			<div id="connexion">
 				<form method="post" action="index.php">
-					<p> Pseudo: <input type="text" name="Pseudo" > </p>
-					<p> Mot de passe :<input type="password" name="passwd" > </p>
+					<label for="pseudo">Pseudo</label> <input type="text" name="pseudo" > </label>
+					<label for="password"> Mot de passe :<input type="password" name="passwd" > </label>
 					<input type="submit" value="Connexion" ></code>
 				</form>
-	 
+			</div>
+			
+			<div id="inscription">
+				<a href="inscription.php" class="btn btn-info">M'inscrire</a>
+			</div>
 		</header>
 	</body>
 	
