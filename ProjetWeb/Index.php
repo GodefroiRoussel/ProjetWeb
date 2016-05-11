@@ -16,9 +16,7 @@
 			<div id="menu">
 				<?php include("menus.php"); ?>
 			</div>
-			<?php
-			echo "COUCOU";
-			?>
+			
 			<div id="connexion">
 				<form method="post" action="index.php">
 					<label for="pseudo">Pseudo</label> <input type="text" name="pseudo" > </label>

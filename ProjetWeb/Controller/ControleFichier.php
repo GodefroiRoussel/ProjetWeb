@@ -15,7 +15,7 @@ if (!verifUpload('IDCard') || !verifUpload('RIB') || !verifUpload('CV')){
 	header('Location: ../View/inscription.php');   
 	exit();
 }
-include_once('../Model/creerInterimaire.php');
+include_once('../Model/Interimaire.php');
 
 
 include_once('../View/index.php');

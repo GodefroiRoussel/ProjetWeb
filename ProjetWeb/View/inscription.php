@@ -238,8 +238,8 @@
 <option value="vanuatu">Vanuatu</option>
 </optgroup>
 			select></label>
-			<label for="email">Email :<input type="email" name="email"> </label>
-			<label for="numTel">Numéro de téléphone :<input type="tel" name="numTel"> </label>
+			<label for="email">Email :<input type="email" name="email"> </label></br>
+			<label for="numTel">Numéro de téléphone :<input type="tel" name="numTel"> </label></br>
 			<label for="civilite">Civilité :
 					<input type="radio" name="civilite" value="Monsieur" /> <label for="Monsieur">Monsieur</label> 
 					<input type="radio" name="civilite" value="Madame" /> <label for="Madame">Madame</label>
