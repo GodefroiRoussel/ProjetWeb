@@ -15,8 +15,19 @@ if (!verifUpload('IDCard') || !verifUpload('RIB') || !verifUpload('CV')){
 	header('Location: ../View/inscription.php');   
 	exit();
 }
+//Echappement d'injection de code
+$_POST['nom']= htmlspecialchars($_POST['nom']);
+$_POST['prenom']= htmlspecialchars($_POST['prenom']);
+$_POST['numTel']= htmlspecialchars($_POST['numTel']);
+$_POST['ville']= htmlspecialchars($_POST['ville']);
+$_POST['rue']= htmlspecialchars($_POST['rue']);
+$_POST['pseudo']= htmlspecialchars($_POST['pseudo']);
+$_POST['passwd']= htmlspecialchars($_POST['passwd']);
+
 include_once('../Model/Interimaire.php');
 
+creerInterimaire($_POST['nom'],$_POST['prenom'],$_POST['pseudo'],$_POST['passwd'], $_POST['age'], $_POST['civilite'], $_POST['email'], 
+$_POST['numTel'], $_POST['ville'], $_POST['rue'], $_POST['numAd'], $_POST['RIB'], $_POST['IDCard'], $_POST['CV']) ;
 
 include_once('../View/index.php');
 
