@@ -8,7 +8,7 @@
     <body>
 		<header> 
 		<!-- Logo, nom de l'entreprise et une partie pour se connecter -->
-			
+			<?php echo "ET MAINTENANT CEST MIEUX!!!!?" ?>
 			<figure>
 				<img src="../Img/logo.png" alt="Logo de l'entreprise" />
 			</figure>
@@ -18,11 +18,7 @@
 			</div>
 			
 			<div id="connexion">
-				<form method="post" action="index.php">
-					<label for="pseudo">Pseudo</label> <input type="text" name="pseudo" > </label>
-					<label for="password"> Mot de passe :<input type="password" name="passwd" > </label>
-					<input type="submit" value="Connexion" ></code>
-				</form>
+				<?php include("View/connexion.php"); ?>
 			</div>
 			
 			<div id="inscription">
