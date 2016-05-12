@@ -35,6 +35,38 @@
 			<div id="inscription">
 				<a href="View/inscription.php" class="btn btn-info">M'inscrire</a>
 			</div>
+			
+			<div id="connexion">
+				<?php include("View/connexion.php"); ?>
+			</div>
+			
+			<div id="offres">
+				<table>
+				<tr>
+					<th>Ref Offre</th>
+					<th>Date Début</th>
+					<th>Date Fin</th>
+					<th>Domaine</th>
+					<th>Expérience</th>
+					<th>Diplôme</th>
+					<th>Salaire</th>
+				</tr>
+				<?php
+					for ($nbLigne = 1; $nbLigne <= 10; $nbLigne++)
+					{
+						<tr>
+							<td>$offres[$nbLigne]['refMission']</td>
+							<td>$offres[$nbLigne]['dateDeb']</td>
+							<td>$offres[$nbLigne]['dateFin']</td>
+							<td>$offres[$nbLigne]['domaine']</td>
+							<td>$offres[$nbLigne]['experience']</td>
+							<td>$offres[$nbLigne]['diplome']</td>
+							<td>$offres[$nbLigne]['salaire']</td>
+						</tr>
+					}
+				</table>
+				?>
+			</div>
 		</header>
 	</body>
 	

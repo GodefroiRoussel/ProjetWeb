@@ -1,5 +1,5 @@
-<form method="post" action="index.php">
-					<label for="pseudo">Pseudo</label> <input type="text" name="pseudo" > </label>
-					<label for="password"> Mot de passe :<input type="password" name="passwd" > </label>
+<form method="post" action="Controller/controlConnexion.php">
+					<label for="email">Email</label> <input type="text" class="form-control" name="email" >
+					<label for="passwd"> Mot de passe :</label><input type="password" class="form-control" name="passwd" >
 					<input type="submit" value="Connexion" ></code>
 				</form>
