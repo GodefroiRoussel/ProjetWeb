@@ -9,7 +9,7 @@
 		
         //On vérifie que le login existe dans la table
 		
-        $rqt = $pdo->prepare('SELECT email FROM interimaire WHERE email = ?');
+        $rqt = $pdo->prepare('SELECT email FROM interimaire, administrateur WHERE email = ?');
         $rqt->execute(array($email));
         $droit =  $rqt->fetch();
 		
@@ -17,7 +17,7 @@
         {
             if(isset($_POST['email']) && isset($_POST['passwd'])){
 
-                $verif_email = $pdo->prepare("SELECT COUNT(*) FROM interimaire WHERE email = ? ");
+                $verif_email = $pdo->prepare("SELECT COUNT(*) FROM interimaire, administrateur WHERE email = ? ");
                 $verif_email->execute(array($email));
                 $count =$verif_email->fetch();
                 if($count[0] == 0)
@@ -29,7 +29,7 @@
                 else { //Login existant
                  
                     //Séléction du password pour le login saisi
-                    $conn = $pdo->prepare('SELECT email,passwd FROM interimaire WHERE email = ? and passwd = ?');
+                    $conn = $pdo->prepare('SELECT email,passwd FROM interimaire, administrateur WHERE email = ? and passwd = ?');
                     $conn->execute(array($email,$password));
                     //$conn -> bindParam('.$pseudo.',$pseudo,PDO::PARAM_STR);
                     //$conn -> bindParam('.$password.',$password,PDO::PARAM_STR);
@@ -41,7 +41,7 @@
                         setcookie("user",$email,time()+(100000),"/");
                     }
                     else{
-                        header('Location: ../View/inscription.php');
+                        header('Location: ../View/index.php');
                     }
 					include_once('../View/index.php');
                 }

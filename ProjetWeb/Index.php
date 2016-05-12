@@ -36,6 +36,13 @@
 				<a href="View/inscription.php" class="btn btn-info">M'inscrire</a>
 			</div>
 		</header>
+		
+		<article id="présentation">
+			<p> L'agence EmploiTech est une agence créée en 2016 par d'anciens élèves de l'école d'ingénieur Polytech Montpellier. Elle a 
+			pour mission d'aider les intérimaires (et les personnes ayant ratées Polytech) à trouver un travail malgré des difficultés importantes en cette période.
+			Pour cela, l'agence EmploiTech a misé sur la mise en place de recherches d'offres d'emplois en ligne et laissant la possibilité aux inscrits d'EmploiTech de 
+			pouvoir postuler sur certaines missions. Et nous l'espérons signer votre contrat de demain ! </p>
+			</article>
 	</body>
 	
 </html>

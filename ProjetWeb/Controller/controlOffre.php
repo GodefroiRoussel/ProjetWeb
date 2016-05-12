@@ -5,9 +5,9 @@
 	
 	include_once('../Model/Mission.php');
 
-	getOffre(0,10);
+	$offres = getOffre(0,10);
 	
-	include_once('../offresEmploi.php');
+	include_once('../View/offresEmploi.php');
 	
 
 	

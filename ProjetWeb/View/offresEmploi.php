@@ -21,27 +21,23 @@
 		<header> 
 		<!-- Logo, nom de l'entreprise et une partie pour se connecter -->
 			<figure>
-				<img src="Img/logo.png" alt="Logo de l'entreprise" />
+				<img src="../Img/logo.png" alt="Logo de l'entreprise" />
 			</figure>
 			
 			<div id="menu" >
-				<?php include("/View/menus.php"); ?>
+				<?php include("menus.php"); ?>
 			</div>
 			
 			<div id="connexion">
-				<?php include("View/connexion.php"); ?>
+				<?php include("connexion.php"); ?>
 			</div>
 			
 			<div id="inscription">
 				<a href="View/inscription.php" class="btn btn-info">M'inscrire</a>
 			</div>
 			
-			<div id="connexion">
-				<?php include("View/connexion.php"); ?>
-			</div>
-			
 			<div id="offres">
-				<table>
+				<table class="table">
 				<tr>
 					<th>Ref Offre</th>
 					<th>Date Début</th>
@@ -52,20 +48,20 @@
 					<th>Salaire</th>
 				</tr>
 				<?php
-					for ($nbLigne = 1; $nbLigne <= 10; $nbLigne++)
+					foreach ($offres as $offre)
 					{
+						?>
 						<tr>
-							<td>$offres[$nbLigne]['refMission']</td>
-							<td>$offres[$nbLigne]['dateDeb']</td>
-							<td>$offres[$nbLigne]['dateFin']</td>
-							<td>$offres[$nbLigne]['domaine']</td>
-							<td>$offres[$nbLigne]['experience']</td>
-							<td>$offres[$nbLigne]['diplome']</td>
-							<td>$offres[$nbLigne]['salaire']</td>
+							<td><?php echo $offre['refMission'];?></td>
+							<td><?php echo $offre['dateDeb'];?></td>
+							<td><?php echo $offre['dateFin'];?></td>
+							<td><?php echo $offre['domaine'];?></td>
+							<td><?php echo $offre['experience'];?></td>
+							<td><?php echo $offre['diplome'];?></td>
+							<td><?php echo $offre['salaire'];?></td>
 						</tr>
-					}
+					<?php } ?>
 				</table>
-				?>
 			</div>
 		</header>
 	</body>
