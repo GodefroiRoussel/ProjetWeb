@@ -9,6 +9,7 @@ function creerInterimaire($nom, $prenom, $dateNaiss, $civilite, $email, $passwd,
     
 }
 
+<<<<<<< HEAD
 
 function getAllInterimaire(){
 	global $pdo;
@@ -53,4 +54,11 @@ function update($id, $nom, $prenom, $dateNaiss, $civilite, $email, $passwd, $tel
     
     
     return $interimaire;
+=======
+function upload($file) {
+global $PDO;
+$stmt = $PDO->prepare("REPLACE INTO INTERIMAIRE (RIB, CV, IDCard) VALUES (?, ?, ?) where ");
+$stmt->bindParam(3, fopen($file['tmp_name'], 'rb'), PDO::PARAM_LOB);
+return $stmt->execute();
+>>>>>>> b37e1b39dd4295beca97663fff2bc7de3e14652a
 }

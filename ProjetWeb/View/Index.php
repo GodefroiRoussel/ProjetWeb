@@ -25,6 +25,7 @@
 			</figure>
 			
 			<div id="menu" >
+<<<<<<< HEAD
 				<?php include("../View/menus.php"); ?>
 			</div>
 			
@@ -34,6 +35,17 @@
 			
 			<div id="inscription">
 				<a href="/index.php" class="btn btn-info">M'inscrire</a>
+=======
+				<?php include("menus.php"); ?>
+			</div>
+			
+			<div id="connexion">
+				<?php include("connexion.php"); ?>
+			</div>
+			
+			<div id="inscription">
+				<a href="View/inscription.php" class="btn btn-info">M'inscrire</a>
+>>>>>>> b37e1b39dd4295beca97663fff2bc7de3e14652a
 			</div>
 		</header>
 		

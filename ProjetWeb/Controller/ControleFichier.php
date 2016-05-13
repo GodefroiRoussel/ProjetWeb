@@ -18,11 +18,14 @@ if (!verifUpload('IDCard') || !verifUpload('RIB') || !verifUpload('CV')){
 //Connexion à la bdd 
 
 	include_once('../Model/ConnexionBDD.php');
+<<<<<<< HEAD
 	
 	if(isset($_COOKIE["user"])){
 		include_once('../Model/estAdmin.php');
 		$estAdmin= isAdmin($_COOKIE["user"]);
 	}
+=======
+>>>>>>> b37e1b39dd4295beca97663fff2bc7de3e14652a
 
 if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['numTel']) && isset($_POST['ville']) && isset($_POST['rue'])
 	&& isset($_POST['passwd']) && isset($_POST['civilite']) && isset($_POST['dateNaissance'])
