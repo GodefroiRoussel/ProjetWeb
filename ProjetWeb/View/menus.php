@@ -1,10 +1,18 @@
 <!-- Menus.php --> 
-<nav>
-	<ul>
-		<li><a href="index.php">Accueil</a></li>
-		<li><a href="actualites.php">Offres d'emploi</a></li>
+<nav class="navbar navbar-default navbar-static-top">
+	<ul class="egmenu">
+		<li><a href="../Controller/controlIndex.php">Accueil</a></li>
+		<li><a href="../Controller/controlOffre.php">Offres d'emploi</a></li>
         <li><a href="choix.php">Pourquoi nous choisir?</a></li>
         <li><a href="nouscontacter.php">Contactez nous</a></li> 
+		
+	<?php	if ($estAdmin){
+	?>
+		<li><a href="../Controller/controlInterimaire.php">Consulter Intérimaire</a></li>
+		<li><a href="nouscontacter.php"></a>Missions</li>
+		<li><a href="nouscontacter.php"></a>Contrats</li>
+		<?php			
+		} ?>
 	</ul>
 </nav>
 

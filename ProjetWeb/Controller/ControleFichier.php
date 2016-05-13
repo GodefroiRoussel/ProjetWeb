@@ -15,8 +15,45 @@ if (!verifUpload('IDCard') || !verifUpload('RIB') || !verifUpload('CV')){
 	header('Location: ../View/inscription.php');   
 	exit();
 }
-include_once('../Model/creerInterimaire.php');
+//Connexion à la bdd 
+
+	include_once('../Model/ConnexionBDD.php');
+	
+	if(isset($_COOKIE["user"])){
+		include_once('../Model/estAdmin.php');
+		$estAdmin= isAdmin($_COOKIE["user"]);
+	}
+
+if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['numTel']) && isset($_POST['ville']) && isset($_POST['rue'])
+	&& isset($_POST['passwd']) && isset($_POST['civilite']) && isset($_POST['dateNaissance'])
+	&& isset($_POST['numAd'])) {*/
+		//Echappement d'injection de code
+	$_POST['nom']= htmlspecialchars($_POST['nom']);
+	$_POST['prenom']= htmlspecialchars($_POST['prenom']);
+	$_POST['numTel']= htmlspecialchars($_POST['numTel']);
+	$_POST['ville']= htmlspecialchars($_POST['ville']);
+	$_POST['rue']= htmlspecialchars($_POST['rue']);
+	$_POST['passwd']= htmlspecialchars($_POST['passwd']);
+	
+	include_once('../Model/Interimaire.php');
+
+	creerInterimaire($_POST['nom'],$_POST['prenom'], $_POST['dateNaissance'], $_POST['civilite'], $_POST['email'], $_POST['passwd'],  
+	$_POST['numTel'], $_POST['ville'], $_POST['rue'], $_POST['numAd'], $_FILES['RIB'], $_FILES['CV'], $_FILES['IDCard']) ;
+
+	include_once('../index.php');
+	
+	}
+	
+	
+else 
+{
+	header('Location: ../View/inscription.php');   
+	exit();
+}
+	
+	
 
 
-include_once('../View/index.php');
+
+
 
