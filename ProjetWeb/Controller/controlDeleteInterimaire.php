@@ -7,10 +7,13 @@
 		include_once('../Model/estAdmin.php');
 		$estAdmin= isAdmin($_COOKIE["user"]);
 		include_once('../Model/Interimaire.php');
-
-	$interimaire = getInterimaire($_GET['idInt']);
+	$_GET['idInt'] = (int) $_GET['idInt'];
+	if ($_GET['idInt'] != 0){
+		deleteInterim2($_GET['idInt']);
+	}
 	
-	include_once('../View/modifInterimaire.php');
+	
+	include_once('../Controller/controlInterimaire.php');
 	}
 	
 	

@@ -1,15 +1,13 @@
 <?php
-function creerInterimaire($nom, $prenom, $dateNaiss, $civilite, $email, $passwd, $telephone, $ville, $rue, $numAd, $RIB, $CV, $IDCard)
+function creerInterimaire($nom, $prenom, $dateNaiss, $civilite, $email, $passwd, $telephone, $ville, $rue, $numAd)
 {
     global $pdo;	
-    //EFFECTUER UNE FONCTION DE HACHAGE POUR LE PASSWD
-	//VALUES ('toto', 'coucou', 'rousl', 'godichou', 20, 'Monsieur', 'go@gmail.com', 0602101, 'Pau', 'rue de la république', 12, 1010, 1100, 0010);
-	$req = $pdo->prepare('INSERT INTO INTERIMAIRE (nom, prenom, dateNaiss, civilité, email, passwd, telephone, ville, rue, num, RIB, CV, IDCard) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
-	$req->execute(array($nom, $prenom, $dateNaiss, $civilite, $email, $passwd, $telephone, $ville, $rue, $numAd, $RIB, $CV, $IDCard));
-    
+    //Effectue un hachage pour le mot de passe
+	$passwd = md5($passwd);
+	$req = $pdo->prepare('INSERT INTO interimaire (nom, prenom, dateNaiss, civilité, email, passwd, telephone, ville, rue, num) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+	$req->execute(array($nom, $prenom, $dateNaiss, $civilite, $email, $passwd, $telephone, $ville, $rue, $numAd));
 }
 
-<<<<<<< HEAD
 
 function getAllInterimaire(){
 	global $pdo;
@@ -22,11 +20,22 @@ function getAllInterimaire(){
     return $interimaires;
 }
 
+function getInterimaireId($email){
+	global $pdo;
+    
+    $req = $pdo->prepare('SELECT idInterimaire FROM interimaire WHERE email = ?');
+    $req->execute(array($email));
+    $interimaire= $req->fetch();
+    
+    
+    return $interimaire;
+}
+
 function getInterimaire($id){
 	global $pdo;
     
     $req = $pdo->prepare('SELECT idInterimaire, nom, prenom, dateNaiss, civilité, email, passwd, telephone, ville, rue, num FROM interimaire WHERE idInterimaire = ?');
-    $req->execute(array($id));
+    $req->execute(array($id[0]));
     $interimaire= $req->fetch();
     
     
@@ -48,17 +57,24 @@ function update($id, $nom, $prenom, $dateNaiss, $civilite, $email, $passwd, $tel
 	'nvville' => $ville,
 	'nvrue' => $rue,
 	'nvnum' => $numAd,
-	'idInt' => $id
+	'idInt' => $id[0]
 	));
     $interimaire= $req->fetch();
     
     
     return $interimaire;
-=======
-function upload($file) {
-global $PDO;
-$stmt = $PDO->prepare("REPLACE INTO INTERIMAIRE (RIB, CV, IDCard) VALUES (?, ?, ?) where ");
-$stmt->bindParam(3, fopen($file['tmp_name'], 'rb'), PDO::PARAM_LOB);
-return $stmt->execute();
->>>>>>> b37e1b39dd4295beca97663fff2bc7de3e14652a
+}
+
+function deleteInterim($id){
+	global $pdo;
+    
+    $req = $pdo->prepare('DELETE FROM interimaire WHERE idInterimaire = ?');
+    $req->execute(array($id[0]));
+}
+
+function deleteInterim2($id){
+	global $pdo;
+    
+    $req = $pdo->prepare('DELETE FROM interimaire WHERE idInterimaire = ?');
+    $req->execute(array($id));
 }

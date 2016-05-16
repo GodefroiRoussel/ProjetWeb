@@ -32,14 +32,13 @@
 				<?php include("connexion.php"); ?>
 			</div>
 			
-			<div id="inscription">
-				<a href="View/inscription.php" class="btn btn-info">M'inscrire</a>
-			</div>
+			
 			
 			<div id="offres">
 				<table class="table">
 				<tr>
 					<th>Ref Offre</th>
+					<th>Lieu</th>
 					<th>Date Début</th>
 					<th>Date Fin</th>
 					<th>Domaine</th>
@@ -50,17 +49,33 @@
 				<?php
 					foreach ($offres as $offre)
 					{
+						$afficher=false;
 						?>
 						<tr>
 							<td><?php echo $offre['refMission'];?></td>
+							<td><?php echo $offre['lieu'];?></td>
 							<td><?php echo $offre['dateDeb'];?></td>
 							<td><?php echo $offre['dateFin'];?></td>
 							<td><?php echo $offre['domaine'];?></td>
 							<td><?php echo $offre['experience'];?></td>
 							<td><?php echo $offre['diplome'];?></td>
 							<td><?php echo $offre['salaire'];?></td>
+							<?php 
+							if ($estAdmin == false){
+								foreach ($postuler as $postule)
+								{
+									if ($postule['refMission']==$offre['refMission']){
+										$afficher=true; ?>
+										<td>Vous avez déjà postulé à cette offre</td>
+										<td><a href="../Controller/controlAnnulation.php?refMi=<?php echo $offre['refMission']?>" class="btn btn-danger"> Annuler </a></td>
+									<?php }
+								}									
+									if(isset($_COOKIE["user"]) && $afficher==false ){
+								?> <td><a href="../Controller/controlPostuler.php?refMi=<?php echo $offre['refMission']?>" class="btn btn-info"> Postuler </a></td>
+							<?php }
+							}	?>
 						</tr>
-					<?php } ?>
+					<?php }  ?>
 				</table>
 			</div>
 		</header>

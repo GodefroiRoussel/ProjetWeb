@@ -7,4 +7,4 @@ if(isset($_COOKIE["user"])){
 		$estAdmin= isAdmin($_COOKIE["user"]);
 	}
 	
-	include_once('../View/Index.php');
+	include_once('../View/nousChoisir.php');

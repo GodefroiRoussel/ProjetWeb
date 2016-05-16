@@ -6,11 +6,12 @@
 	if(isset($_COOKIE["user"])){
 		include_once('../Model/estAdmin.php');
 		$estAdmin= isAdmin($_COOKIE["user"]);
-		include_once('../Model/Interimaire.php');
+		include_once('../Model/Mission.php');
 
-	$interimaire = getInterimaire($_GET['idInt']);
+	deleteOffre($_GET['refMi']);
+	$missions = getAllOffreDisponible();
 	
-	include_once('../View/modifInterimaire.php');
+	include_once('../View/mission.php');
 	}
 	
 	

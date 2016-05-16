@@ -8,7 +8,7 @@
 		$estAdmin= isAdmin($_COOKIE["user"]);
 	}
 
-if (isset($_POST['nom']) && !empty($_POST['email']) && isset($_POST['prenom']) && isset($_POST['numTel']) && isset($_POST['ville']) && isset($_POST['rue'])
+if (isset($_POST['nom']) && isset($_POST['email']) && isset($_POST['prenom']) && isset($_POST['numTel']) && isset($_POST['ville']) && isset($_POST['rue'])
 	&& isset($_POST['passwd']) && isset($_POST['dateNaissance'])
 	&& isset($_POST['numAd'])) {
 		//Echappement d'injection de code
@@ -20,8 +20,8 @@ if (isset($_POST['nom']) && !empty($_POST['email']) && isset($_POST['prenom']) &
 	$_POST['passwd']= htmlspecialchars($_POST['passwd']);
 	$_POST['email']= htmlspecialchars($_POST['email']);
 	
-	include_once('../Model/Interimaire.php');
-	creerInterimaire($_POST['nom'],$_POST['prenom'], $_POST['dateNaissance'], $_POST['civilite'], $_POST['email'], $_POST['passwd'],  
+	include_once('../Model/Administrateur.php');
+	creerAdmin($_POST['nom'],$_POST['prenom'], $_POST['dateNaissance'], $_POST['civilite'], $_POST['email'], $_POST['passwd'],  
 	$_POST['numTel'], $_POST['ville'], $_POST['rue'], $_POST['numAd']) ;
 
 	include_once('../View/Index.php');
@@ -29,7 +29,7 @@ if (isset($_POST['nom']) && !empty($_POST['email']) && isset($_POST['prenom']) &
 	}
 else 
 {
-	header('Location: ../View/inscription.php');   
+	header('Location: ../View/ajoutAdmin.php');   
 	exit();
 }
 	

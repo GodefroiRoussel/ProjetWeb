@@ -21,47 +21,51 @@
 				<img src="../Img/logo.png" alt="Logo de l'entreprise" />
 			</figure>
 			
+
+			
 			<div id="menu">
-				<?php include("menus.php"); ?>
+				<?php include("../View/menus.php"); ?>
 			</div>
 			
 			<div id="connexion">
-				<?php include("connexion.php"); ?>
+				<?php include("../View/connexion.php"); ?>
 			</div>
-			
 			
 		</header>
 		
-		<div id="interim">
+		<div id="Contrat">
+		<?php if($estAdmin){
+								?><a href="controlContrat.php" class="btn btn-info">Tous les contrats</a>
+								<a href="controlContratAValider.php" class="btn btn-info">Les contrats à valider</a>
+								<a href="controlContratEnCours.php" class="btn btn-info">Les contrats en cours</a>
+		<?php }
+		else{ ?>
+			<a href="controlContrat.php" class="btn btn-info">Tous mes contrats</a>
+			<a href="controlContratAValider.php" class="btn btn-info">Mes contrats en attente</a>
+			<a href="controlContratEnCours.php" class="btn btn-info">Mes contrats en cours</a>
+		<?php	}
+								?>
+		
 			<table class="table">
 				<tr>
-					<th>id Interimaire</th>
-					<th>Nom</th>
-					<th>Prénom</th>
-					<th>Date de Naissance</th>
-					<th>Civilité</th>
-					<th>email</th>
-					<th>telephone</th>
-					<th>Ville</th>
-					<th>Rue</th>
-					<th>Numéro</th>
+					<th>id Contrat</th>
+					<th>Lieu</th>
+					<th>Date Début</th>
+					<th>Date Fin</th>
+					<th>id Intérimaire</th>
+					<th>référence Mission</th>
 				</tr>
 				<?php
-					foreach ($interimaires as $interimaire)
+					foreach ($contrats as $contrat)
 					{
 						?>
 						<tr>
-							<td><?php echo $interimaire['idInterimaire'];?></td>
-							<td><?php echo $interimaire['nom'];?></td>
-							<td><?php echo $interimaire['prenom'];?></td>
-							<td><?php echo $interimaire['dateNaiss'];?></td>
-							<td><?php echo $interimaire['civilité'];?></td>
-							<td><?php echo $interimaire['email'];?></td>
-							<td><?php echo $interimaire['telephone'];?></td>
-							<td><?php echo $interimaire['ville'];?></td>
-							<td><?php echo $interimaire['rue'];?></td>
-							<td><?php echo $interimaire['num'];?></td>
-							<td><a href="../Controller/controlModifInterimaire.php?idInt=<?php echo $interimaire['idInterimaire']?>" class="btn btn-info"> MODIFIER </a></td> 
+							<td><?php echo $contrat['idContrat'];?></td>
+							<td><?php echo $contrat['lieu'];?></td>
+							<td><?php echo $contrat['dateDeb'];?></td>
+							<td><?php echo $contrat['dateFin'];?></td>
+							<td><?php echo $contrat['idInterim'];?></td>
+							<td><?php echo $contrat['refMis'];?></td>
 						</tr> 
 					<?php } ?>
 				</table>

@@ -29,42 +29,38 @@
 				<?php include("connexion.php"); ?>
 			</div>
 			
-			
 		</header>
 		
 		<div id="interim">
 			<table class="table">
 				<tr>
-					<th>id Interimaire</th>
-					<th>Nom</th>
-					<th>Prénom</th>
-					<th>Date de Naissance</th>
-					<th>Civilité</th>
-					<th>email</th>
-					<th>telephone</th>
-					<th>Ville</th>
-					<th>Rue</th>
-					<th>Numéro</th>
+					<th>référence Mission</th>
+					<th>Lieu</th>
+					<th>Date Début</th>
+					<th>Date Fin</th>
+					<th>Domaine</th>
+					<th>Expérience</th>
+					<th>Diplôme</th>
+					<th>Salaire</th>
 				</tr>
 				<?php
-					foreach ($interimaires as $interimaire)
+					foreach ($missions as $mission)
 					{
 						?>
 						<tr>
-							<td><?php echo $interimaire['idInterimaire'];?></td>
-							<td><?php echo $interimaire['nom'];?></td>
-							<td><?php echo $interimaire['prenom'];?></td>
-							<td><?php echo $interimaire['dateNaiss'];?></td>
-							<td><?php echo $interimaire['civilité'];?></td>
-							<td><?php echo $interimaire['email'];?></td>
-							<td><?php echo $interimaire['telephone'];?></td>
-							<td><?php echo $interimaire['ville'];?></td>
-							<td><?php echo $interimaire['rue'];?></td>
-							<td><?php echo $interimaire['num'];?></td>
-							<td><a href="../Controller/controlModifInterimaire.php?idInt=<?php echo $interimaire['idInterimaire']?>" class="btn btn-info"> MODIFIER </a></td> 
+							<td><?php echo $mission['refMission'];?></td>
+							<td><?php echo $mission['lieu'];?></td>
+							<td><?php echo $mission['dateDeb'];?></td>
+							<td><?php echo $mission['dateFin'];?></td>
+							<td><?php echo $mission['domaine'];?></td>
+							<td><?php echo $mission['experience'];?></td>
+							<td><?php echo $mission['diplome'];?></td>
+							<td><?php echo $mission['salaire'];?></td>
+							<td><a href="../Controller/controlModifMission.php?refMi=<?php echo $mission['refMission']?>" class="btn btn-info" > MODIFIER </a></td> 
 						</tr> 
 					<?php } ?>
 				</table>
+				<a href="../Controller/controlAjoutMission.php" class="btn btn-info"> Ajouter une mission </a>
 			</div>
 	</body>
 	

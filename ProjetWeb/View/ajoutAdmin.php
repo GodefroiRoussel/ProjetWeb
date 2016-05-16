@@ -32,7 +32,7 @@
 	
 		</header>
 		
-		<form method="post" action="../Controller/ControleFichier.php"  enctype="multipart/form-data">
+		<form method="post" action="../Controller/controlApresAjoutAdmin.php"  enctype="multipart/form-data">
 			<label for="nom">Nom :<input type="text" class="form-control" name="nom"> </label>
 			<label for="prenom">Prenom :<input type="text" class="form-control" name="prenom"> </label>
 			<label for="dateNaissance">Date de naissance :<input type="date" class="form-control" name="dateNaissance"> </label>
@@ -47,7 +47,7 @@
 			<label for="numAd">Numéro :<input type="number" class="form-control" name="numAd"> </label>
 			<label for="passwd">Mot de Passe :<input type="password" class="form-control" name="passwd"> </label>
 			
-			<input type="submit" class="btn btn-info" value="Valider" >
+			<input type="submit" class="btn btn-info" value="Créer" >
 		</form>
 	</body>
 	

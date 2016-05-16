@@ -32,14 +32,14 @@
 			
 		</header>
 		
-		<form method="post" action="../Controller/controlApresModif.php?idInt=<?php echo $interimaire['idInterimaire']?>"  enctype="multipart/form-data">
-			<label for="nom">Nom :<input type="text" class="form-control" name="nom" value ="<?php echo $interimaire['nom']?>"> </label>
-			<label for="prenom">Prenom :<input type="text" class="form-control" name="prenom" value ="<?php echo $interimaire['prenom']?>"> </label>
-			<label for="dateNaissance">Date de naissance :<input type="date" class="form-control" name="dateNaissance" value ="<?php echo $interimaire['dateNaiss']?>"> </label>
-			<label for="email">Email :<input type="email" class="form-control" name="email" value ="<?php echo $interimaire['email']?>"> </label>
-			<label for="numTel">Numéro de téléphone :<input type="tel" class="form-control" name="numTel" value ="<?php echo $interimaire['telephone']?>"> </label>
+		<form method="post" action="../Controller/controlApresModifMonCompte.php"  enctype="multipart/form-data">
+			<label for="nom">Nom :<input type="text" class="form-control" name="nom" value ="<?php echo $myself['nom']?>"> </label>
+			<label for="prenom">Prenom :<input type="text" class="form-control" name="prenom" value ="<?php echo $myself['prenom']?>"> </label>
+			<label for="dateNaissance">Date de naissance :<input type="date" class="form-control" name="dateNaissance" value ="<?php echo $myself['dateNaiss']?>"> </label>
+			<label for="email">Email :<input type="email" class="form-control" name="email" value ="<?php echo $myself['email']?>"> </label>
+			<label for="numTel">Numéro de téléphone :<input type="tel" class="form-control" name="numTel" value ="<?php echo $myself['telephone']?>"> </label>
 			<?php 
-			if ($interimaire['civilité'] == 'Monsieur'){ ?>
+			if ($myself['civilité'] == 'Monsieur'){ ?>
 			<label for="civilite">Civilité :
 					<input type="radio" name="civilite" class="form-control" value="Monsieur" checked="checked" /> <label for="Monsieur">Monsieur</label> 
 					<input type="radio" name="civilite" class="form-control" value="Madame" /> <label for="Madame">Madame</label>
@@ -54,15 +54,15 @@
 			</label>
 			<?php  } 
 			 ?>
-			<label for="ville">Ville :<input type="text" class="form-control" name="ville" value ="<?php echo $interimaire['ville']?>"> </label>
-			<label for="rue">Rue :<input type="text" class="form-control" name="rue" value ="<?php echo $interimaire['rue']?>"> </label>
-			<label for="numAd">Numéro :<input type="number" class="form-control" name="numAd" value ="<?php echo $interimaire['num']?>"> </label>
-			<label for="passwd">Mot de Passe :<input type="password" class="form-control" name="passwd" value ="<?php echo $interimaire['passwd']?>"> </label>
+			<label for="ville">Ville :<input type="text" class="form-control" name="ville" value ="<?php echo $myself['ville']?>"> </label>
+			<label for="rue">Rue :<input type="text" class="form-control" name="rue" value ="<?php echo $myself['rue']?>"> </label>
+			<label for="numAd">Numéro :<input type="number" class="form-control" name="numAd" value ="<?php echo $myself['num']?>"> </label>
+			<label for="passwd">Mot de Passe :<input type="password" class="form-control" name="passwd" value ="<?php echo $myself['passwd']?>"> </label>
 			
-			<input type="submit" class="btn btn-info" value="Valider" >
+			<input type="submit"  class="btn btn-info" value="Valider" >
 		</form>
 		
-		<a href="../Controller/controlDeleteInterimaire.php?idInt=<?php echo $interimaire['idInterimaire']?>"  class="btn btn-danger"> Supprimer l'intérimaire </a>
+		<a href="../Controller/controlDeleteMonCompte.php" class="btn btn-danger" > Supprimer mon compte </a>
 	</body>
 	
 </html>
