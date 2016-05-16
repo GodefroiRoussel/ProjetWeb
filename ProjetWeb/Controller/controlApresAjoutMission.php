@@ -16,7 +16,7 @@
 	
 	creerOffre($_POST['lieu'], $_POST['dateDeb'], $_POST['dateFin'], $_POST['domaine'], $_POST['experience'], $_POST['diplome'], $_POST['salaire'] );
 	
-	$missions = getAllOffre();
+	$missions = getAllOffreDisponible();
 
 	include_once('../View/mission.php');
 	}
