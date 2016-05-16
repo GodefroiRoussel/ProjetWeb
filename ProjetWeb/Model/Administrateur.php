@@ -31,6 +31,16 @@ function getAdmin($id){
     return $admin;
 }
 
+function getAdmin2($id){
+	global $pdo;
+    
+    $req = $pdo->prepare('SELECT idAdmin, nom, prenom, dateNaiss, civilité, email, passwd, telephone, ville, rue, num FROM administrateur WHERE idAdmin = ?');
+    $req->execute(array($id));
+    $admin= $req->fetch();
+
+    return $admin;
+}
+
 function updateAdmin($id, $nom, $prenom, $dateNaiss, $civilite, $email, $passwd, $telephone, $ville, $rue, $numAd){
 	global $pdo;
     

@@ -14,8 +14,9 @@
 	$_POST['ville']= htmlspecialchars($_POST['ville']);
 	$_POST['rue']= htmlspecialchars($_POST['rue']);
 	$_POST['passwd']= htmlspecialchars($_POST['passwd']);
+	$passwd = md5($_POST['passwd']);
 
-	update($_GET['idInt'], $_POST['nom'], $_POST['prenom'], $_POST['dateNaissance'], $_POST['civilite'], $_POST['email'], $_POST['passwd'],  
+	update($_GET['idInt'], $_POST['nom'], $_POST['prenom'], $_POST['dateNaissance'], $_POST['civilite'], $_POST['email'], $passwd,  
 	$_POST['numTel'], $_POST['ville'], $_POST['rue'], $_POST['numAd']);
 	$interimaire = getInterimaire($_GET['idInt']);
 	

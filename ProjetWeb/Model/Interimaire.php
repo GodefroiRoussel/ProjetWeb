@@ -42,6 +42,17 @@ function getInterimaire($id){
     return $interimaire;
 }
 
+function getInterimaire2($id){
+	global $pdo;
+    
+    $req = $pdo->prepare('SELECT idInterimaire, nom, prenom, dateNaiss, civilité, email, passwd, telephone, ville, rue, num FROM interimaire WHERE idInterimaire = ?');
+    $req->execute(array($id));
+    $interimaire= $req->fetch();
+    
+    
+    return $interimaire;
+}
+
 function update($id, $nom, $prenom, $dateNaiss, $civilite, $email, $passwd, $telephone, $ville, $rue, $numAd){
 	global $pdo;
     

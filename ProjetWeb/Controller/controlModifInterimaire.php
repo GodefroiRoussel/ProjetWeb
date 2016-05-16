@@ -8,9 +8,18 @@
 		$estAdmin= isAdmin($_COOKIE["user"]);
 		include_once('../Model/Interimaire.php');
 
-	$interimaire = getInterimaire($_GET['idInt']);
+		$_GET['idInt'] = (int) $_GET['idInt'];
+		if ($_GET['idInt'] != 0){
+			$interimaire = getInterimaire2($_GET['idInt']);
+			include_once('../View/modifInterimaire.php');
+		}
+		else
+		{
+			include_once('../View/interimaire.php');
+		}
 	
-	include_once('../View/modifInterimaire.php');
+	
+	
 	}
 	
 	
