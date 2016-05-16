@@ -57,9 +57,9 @@
 							<td><?php echo $offre['dateDeb'];?></td>
 							<td><?php echo $offre['dateFin'];?></td>
 							<td><?php echo $offre['domaine'];?></td>
-							<td><?php echo $offre['experience'];?></td>
+							<td><?php echo $offre['experience'];?> an(s)</td>
 							<td><?php echo $offre['diplome'];?></td>
-							<td><?php echo $offre['salaire'];?></td>
+							<td><?php echo $offre['salaire'];?> € par mois</td>
 							<?php 
 							if ($estAdmin == false){
 								foreach ($postuler as $postule)

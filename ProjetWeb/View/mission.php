@@ -53,9 +53,9 @@
 							<td><?php echo $mission['dateDeb'];?></td>
 							<td><?php echo $mission['dateFin'];?></td>
 							<td><?php echo $mission['domaine'];?></td>
-							<td><?php echo $mission['experience'];?></td>
+							<td><?php echo $mission['experience']; ?> an(s)</td>
 							<td><?php echo $mission['diplome'];?></td>
-							<td><?php echo $mission['salaire'];?></td>
+							<td><?php echo $mission['salaire']; ?> € par mois</td>
 							<td><a href="../Controller/controlModifMission.php?refMi=<?php echo $mission['refMission']?>" class="btn btn-info" > MODIFIER </a></td> 
 						</tr> 
 					<?php } ?>
